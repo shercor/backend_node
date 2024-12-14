@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: bienes-raices-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=secret
+      - DB_NAME=bienes_raices
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+    command: ["sh", "-c", "wait-for-it db:3306 -- npm run server"]
+
+  db:
+    image: mysql:8
+    container_name: bienes-raices-db
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: bienes_raices
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
