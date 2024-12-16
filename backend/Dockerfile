@@ -11,7 +11,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Se corre el comando npm install
-RUN npm install
+RUN npm install --include=dev
+RUN npm install -g nodemon
 
 # Descarga el script wait-for-it para esperar la base de datos
 RUN apt-get update && apt-get install -y curl && \

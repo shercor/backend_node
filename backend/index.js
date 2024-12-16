@@ -11,7 +11,7 @@ const connection = await mysql.createConnection({
   host: process.env.DB_HOST || 'db',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'bienes_raices',
+  database: process.env.DB_NAME || 'proyecto_node',
 });
 
 console.log('Conexión a la base de datos establecida');

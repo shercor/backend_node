@@ -1,7 +1,7 @@
 {
-  "name": "bienes-raices",
+  "name": "proyecto_node",
   "version": "1.0.0",
-  "description": "proyecto para aprender node",
+  "description": "proyecto hecho en node :3",
   "main": "index.js",
   "type": "module",
   "scripts": {

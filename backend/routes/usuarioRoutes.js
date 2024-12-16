@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/nosotros', function (req, res) {
-    res.send('Hola, somos nosotros 2223232')
+    res.send('Hola, somos nosotros')
 });
 
 export default router

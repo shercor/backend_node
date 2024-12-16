@@ -4,14 +4,14 @@ services:
   backend:
     build:
       context: ./backend
-    container_name: bienes-raices-backend
+    container_name: proyecto-node-backend
     ports:
       - "3000:3000"
     environment:
       - DB_HOST=db
       - DB_USER=root
       - DB_PASSWORD=secret
-      - DB_NAME=bienes_raices
+      - DB_NAME=proyecto_node
     depends_on:
       - db
     volumes:
@@ -20,11 +20,11 @@ services:
 
   db:
     image: mysql:8
-    container_name: bienes-raices-db
+    container_name: proyecto-node-db
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: bienes_raices
+      MYSQL_DATABASE: proyecto_node
     ports:
-      - "3306:3306"
+      - "4306:3306"
     volumes:
       - ./db:/var/lib/mysql
