@@ -19,10 +19,13 @@ console.log('Conexión a la base de datos establecida');
 //Crear la app
 const app = express();
 
-// Routing
+// Habilitar Template Engine: Pug
+app.set('view engine' , 'pug')
+app.set('views' , './views')
 
+// Routing
 // app.use, a diferencia de app.get,  busca TODAS las rutas que inicien con lo dado, en este caso, la diagonal
-app.use('/' , usuarioRoutes)
+app.use('/auth' , usuarioRoutes)
 
 
 
