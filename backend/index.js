@@ -23,14 +23,13 @@ const app = express();
 app.set('view engine' , 'pug')
 app.set('views' , './views')
 
+// Carpeta Pública, para setear donde estaran los archivos publicos
+app.use(express.static('public'))
+
 // Routing
-// app.use, a diferencia de app.get,  busca TODAS las rutas que inicien con lo dado, en este caso, la diagonal
 app.use('/auth' , usuarioRoutes)
 
-
-
 //Definir un puerto y arrancar el proyecto
-
 const port = 3000;
 
 app.listen(port, () =>

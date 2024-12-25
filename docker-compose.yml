@@ -16,7 +16,8 @@ services:
       - db
     volumes:
       - ./backend:/app
-    command: ["sh", "-c", "wait-for-it db:3306 -- nodemon --legacy-watch index.js"] 
+    command: ["sh", "-c", "wait-for-it db:3306 -- npm run dev"] 
+    #command: ["sh", "-c", "wait-for-it db:3306 -- nodemon --legacy-watch index.js"] 
 
   db:
     image: mysql:8
