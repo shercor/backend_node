@@ -2,4 +2,10 @@ extends ../layout/index
 
 block contenido
     div 
-        h2.text-center.text-6xl Iniciar sesiaaassssonaaaaa
+        div= texto
+        h2 holaaaa
+        if autenticado 
+            p Usuario Autenticado 
+        else 
+            p Inicia Sesion
+        a(href="https://www.google.com",target="_blank")

@@ -15,6 +15,7 @@
   "author": "Sebastian Herrera",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "express": "^4.19.2",
     "mysql2": "^3.11.5",
     "pug": "^3.0.3"

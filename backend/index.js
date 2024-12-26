@@ -7,14 +7,28 @@ import mysql from 'mysql2/promise';
 
 
 //Conexión a base de datos
-const connection = await mysql.createConnection({
-  host: process.env.DB_HOST || 'db',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'proyecto_node',
-});
+// const connection = await mysql.createConnection({
+//   host: process.env.DB_HOST || 'db',
+//   user: process.env.DB_USER || 'root',
+//   password: process.env.DB_PASSWORD || '',
+//   database: process.env.DB_NAME || 'proyecto_node',
+// });
 
-console.log('Conexión a la base de datos establecida');
+// console.log('Conexión a la base de datos establecida');
+
+
+
+
+// (async () => {
+//   connection = await mysql.createConnection({
+//       host: process.env.DB_HOST || 'db',
+//       user: process.env.DB_USER || 'root',
+//       password: process.env.DB_PASSWORD || '',
+//       database: process.env.DB_NAME || 'proyecto_node',
+//   });
+
+//   console.log('Conexión a la base de datos establecida');
+// })();
 
 //Crear la app
 const app = express();
@@ -30,6 +44,7 @@ app.use(express.static('public'))
 app.use('/auth' , usuarioRoutes)
 
 //Definir un puerto y arrancar el proyecto
+
 const port = 3000;
 
 app.listen(port, () =>

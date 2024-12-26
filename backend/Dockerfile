@@ -13,7 +13,7 @@ COPY package*.json ./
 # Se corre el comando npm install
 RUN npm install --include=dev
 RUN npm install -g nodemon
-RUN npm install -g concurrently
+#RUN npm install -g concurrently
 
 # Descarga el script wait-for-it para esperar la base de datos
 RUN apt-get update && apt-get install -y curl && \
@@ -25,4 +25,4 @@ COPY . .
 
 # Instrucciones finales para ejecutar los comandos para correr la App Dockerizada
 #CMD ["wait-for-it", "db:3306", "--", "npm", "start"]
-CMD ["wait-for-it", "db:3306", "--", "sh", "-c", "npm run dev"]
+CMD ["wait-for-it", "db:3306", "--", "sh", "-c", "npm run server"]
