@@ -3,35 +3,18 @@ import express from 'express'; //Import con EMS, connfigurado en el package.json
 
 import usuarioRoutes from './routes/usuarioRoutes.js'
 
-import mysql from 'mysql2/promise';
-
-
-//Conexión a base de datos
-// const connection = await mysql.createConnection({
-//   host: process.env.DB_HOST || 'db',
-//   user: process.env.DB_USER || 'root',
-//   password: process.env.DB_PASSWORD || '',
-//   database: process.env.DB_NAME || 'proyecto_node',
-// });
-
-// console.log('Conexión a la base de datos establecida');
-
-
-
-
-// (async () => {
-//   connection = await mysql.createConnection({
-//       host: process.env.DB_HOST || 'db',
-//       user: process.env.DB_USER || 'root',
-//       password: process.env.DB_PASSWORD || '',
-//       database: process.env.DB_NAME || 'proyecto_node',
-//   });
-
-//   console.log('Conexión a la base de datos establecida');
-// })();
+import db from './config/db.js'
 
 //Crear la app
 const app = express();
+
+//Conexion a la db con Sequelize
+try{
+    await db.authenticate();
+    console.log('Conexion a la base de datos establecida')
+} catch (error) {
+    console.log(error)
+}
 
 // Habilitar Template Engine: Pug
 app.set('view engine' , 'pug')

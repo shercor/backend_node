@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Titulo del Index de la pagina
+        title Titulo Proyecto | #{pagina}
 
         //- Ruta para utilizar TailwindCss
         //- link(rel="stylesheet", href="/css/app.css")
@@ -12,5 +12,17 @@ html(lang="en")
         <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
         <script src="/dist/js/bootstrap.bundle.min.js"></script>
     body.min-h-screen.bg-gray-50
+        include ../components/header
+        div(id="main-header2" , class="d-flex", style="background-color: red; height: 30px; justify-content:space-between;")
+            p Bienvenido
+            p Menu de Usuario
+        div(id="slider-container", style="background-color: black; height: 100px;")
+        div(id="main-menu", class="d-flex ", style="justify-content: space-around; padding: 0px 200px 0px 200px;")
+            span Tabaco Granel 
+            span Papelillos 
+            span Accesorios 
+            span Boquillas / Filtros 
+            span Pipas 
+            span Regalos / Ofertas
         main(class="mx-auto container mt-10 px-2")
             block contenido
