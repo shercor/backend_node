@@ -1,13 +1,15 @@
 import Sequelize from 'sequelize'
+import dotenv from 'dotenv'
+dotenv.config({path: '.env'})
 
 // Configuracion de la base de datos
 
 const db = new Sequelize(
-    'proyecto_node', // Nombre de la BD
-    'root', // Usuario de la db
-    'secret', // Password de la db
+    process.env.BD_NOMBRE, // Nombre de la BD
+    process.env.BD_USER, // Usuario de la db
+    process.env.BD_PASSWORD, // Password de la db
     {
-        host: 'db',
+        host: process.env.BD_HOST,
         port: 3306,
         dialect: 'mysql',
         define: {
